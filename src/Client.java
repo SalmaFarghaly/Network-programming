@@ -40,12 +40,11 @@ public class Client {
 					p3=new Point (Float.parseFloat(numbers[0]),Float.parseFloat(numbers[1]));
 					Triangle t=new Triangle(p1,p2,p3);
 					Triangles.add(t);
-					//t.print();
 				}
 			}
-			//for (final Triangle t : Triangles) {t.print();}
+			
 			scanner.close();
-			//to get rid of EOF Exception
+			//to handle EOF Exception
 			Triangle temp=null;
 			Triangles.add(temp);
 			Socket socket = new Socket("localhost", 6666);
@@ -58,10 +57,7 @@ public class Client {
 				//prompt a key form user
 				System.out.println("Press any key to send the triangle...");
 				s.nextLine();
-//				promptEnterKey(Scanner s);
 				if(t!=null) {
-				
-//					promptEnterKey();
 					System.out.println("Sending the triangle # "+i+"........\n");
 					
 					System.out.println(t.toString());
@@ -75,9 +71,7 @@ public class Client {
 					BufferedReader socketReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 					String triangleType = socketReader.readLine();
 					System.out.println("The triangle Type is " + triangleType+"\n");
-					}
-//					message=null;
-//				
+					}				
 			}
 			System.out.print("This Connection has been terminated");
 			s.close();
@@ -90,9 +84,4 @@ public class Client {
 			System.out.println(e);
 		} 
 	}
-//	public static void promptEnterKey(){
-//		   System.out.println("Press any key to send the triangle...");
-//		   Scanner scanner = new Scanner(System.in);
-//		   scanner.nextLine();
-//		}
 }
