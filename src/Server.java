@@ -24,10 +24,6 @@ public class Server {
 						ServerSocket ss = new ServerSocket(PORT);
 						while (true) {
 							clientNumber++;
-							/*======================================================================*/
-							/*SORRY I HAVE MADE A MISTAKE IN THE VIDEO*/
-							/*the thread takes CLIENT SOCKET and clientNumber in it's constructor*/
-							/*not the SERVER SOCKET as i mentioned in the video*/
 							new GetTriangleType(ss.accept(), clientNumber).start();
 						}
 
