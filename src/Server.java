@@ -77,7 +77,7 @@ public class Server {
 					e.printStackTrace();
 				}
 				out.close();
-		        ois.close();
+		                ois.close();
 				socket.close();
 				System.out.println("Connection with Client #" + this.clientNo + " finished..");
 			} catch (IOException e) {
